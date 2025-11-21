@@ -44,6 +44,7 @@ section {
 	color: transparent;
 }
 
+
 /* Structure */
 html {
 	font-size: 100%;
@@ -1213,6 +1214,11 @@ textarea {
 
 .footer a:hover {
 	text-decoration: underline;
+}
+
+.footnotes p{
+	margin: 0px;
+	padding: 0px;
 }
 
 /* Media Queries */
