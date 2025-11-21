@@ -925,7 +925,8 @@ button:not(:-moz-focusring):focus > .menu__btn-title {
 
 .list__footer-readmore {
 	float: right;
-	margin-top: 10px;
+	margin-top: 0px;
+	font-weight: bolder;
 }
 
 /* Pagination */

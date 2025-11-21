@@ -13,14 +13,26 @@
 		<div class="list__meta meta">{{ . }}</div>
 		{{- end }}
 	</header>
-	<div class="content list__excerpt post__content clearfix">
-		{{ .Summary }}
+
+	{{ partial "post_tags.html" . }}
+
+	{{ with .Params.featured_image }}
+		{{ $img := $.Resources.GetMatch . }}
+		{{ if $img }}
+			<img class="summary__list__featureimage" src="{{ $img.RelPermalink }}" alt="{{ $.Title }}">
+		{{ else }}
+			FEATURE IMAGE BROKEN!
+		{{ end }}
+	{{ end }}
+
+	<div class="content list__excerpt post__content clearfix" style="margin-top: 0;">
+		{{ .Summary | safeHTML }}
 	</div>
 	{{- if .Site.Params.readmore }}
-	{{- if .Truncated }}
-	<div class="list__footer clearfix">
-		<a class="list__footer-readmore btn" href="{{ .RelPermalink }}">{{ T "read_more" }}</a>
-	</div>
-	{{- end }}
+		{{- if .Truncated }}
+			<div class="list__footer clearfix">
+				<a class="list__footer-readmore" href="{{ .RelPermalink }}">{{ T "read_more" }}</a>
+			</div>
+		{{- end }}
 	{{- end }}
 </article>
