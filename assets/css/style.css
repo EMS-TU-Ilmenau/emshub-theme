@@ -157,6 +157,14 @@ textarea {
 	background: {{ $uiColor }};
 }
 
+.btn-light {
+	padding: 3px 5px;
+	font-weight: 700;
+	color: #fff;
+	white-space: pre-line;
+	background: #888;
+}
+
 .btn:hover {
 	color: #fff;
 	background: {{ $highlightColor }};
